@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocket Design Project</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 20px; background: #0b0c10; color: #fff; }
+    .rocket-buttons { display: flex; justify-content: center; gap: 20px; margin-top: 30px; }
+    button { padding: 12px 20px; border: none; border-radius: 8px; background: #45a29e; color: white; cursor: pointer; font-size: 16px; }
+    button:hover { background: #66fcf1; color: #0b0c10; }
+    .content { margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <h1>My Rocket Design Journey 🚀</h1>
+  <p>Click a rocket to see its design process and results.</p>
+  <div class="rocket-buttons">
+    <button onclick="showContent('rocket1')">Rocket 1</button>
+    <button onclick="showContent('rocket2')">Rocket 2</button>
+    <button onclick="showContent('rocket3')">Rocket 3</button>
+  </div>
+
+  <div id="content" class="content">
+    <h2>Welcome!</h2>
+    <p>Select a rocket to view its progress.</p>
+  </div>
+
+  <script>
+    const data = {
+      rocket1: { title: "Rocket 1", text: "Rocket 1 failed to launch due to weight, but taught me valuable lessons about design balance and aerodynamics." },
+      rocket2: { title: "Rocket 2", text: "Rocket 2 launched successfully but drifted off course. I learned about stabilizing fins and thrust control." },
+      rocket3: { title: "Rocket 3", text: "Rocket 3 achieved perfect flight! A culmination of design tweaks, patience, and curiosity." }
+    };
+
+    function showContent(rocket) {
+      const info = data[rocket];
+      document.getElementById("content").innerHTML = `<h2>${info.title}</h2><p>${info.text}</p>`;
+    }
+  </script>
+</body>
+</html>
